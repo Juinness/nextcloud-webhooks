@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @copyright Copyright (c) 2024 Sebastian Stermfeöd <sternfeld@gonicus.de>
+ * @copyright Copyright (c) 2024 Sebastian Sternfeld <sternfeld@gonicus.de>
  *
- * @author Sebastian Stermfeöd <sternfeld@gonicus.de>
+ * @author Sebastian Sternfeld <sternfeld@gonicus.de>
  *
  * @license GNU AGPL version 3 or any later version
  *
