@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @copyright Copyright (c) 2021 Paweł Kuffel <pawel@kuffel.io>
+ * @copyright Copyright (c) 2024 Sebastian Stermfeöd <sternfeld@gonicus.de>
  *
- * @author Paweł Kuffel <pawel@kuffel.io>
+ * @author Sebastian Stermfeöd <sternfeld@gonicus.de>
  *
  * @license GNU AGPL version 3 or any later version
  *
