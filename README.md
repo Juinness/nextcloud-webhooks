@@ -291,6 +291,48 @@ Notification payload:
   eventType: 'OCA\\DAV\\Events\\CalendarObjectDeletedEvent'
 }
 ```
+### Calendar Object Restore from Trash
+
+Fires whenever a calendar event is restored from Trashbin. 
+
+Config name: `webhooks_calendar_object_restore_from_trash_url`
+
+Notification payload:
+```javascript
+{
+  calendarId: 30,
+  calendarData: {
+    id: '30',
+    uri: 'test',
+    principaluri: 'principals/users/admin',
+    // [...]
+    '{http://apple.com/ns/ical/}calendar-order': 0,
+    '{http://apple.com/ns/ical/}calendar-color': '#499AA2',
+    '{http://nextcloud.com/ns}deleted-at': null,
+    '{http://nextcloud.com/ns}owner-displayname': 'admin'
+  },
+  shares: [],
+  objectData: {
+    id: '118',
+    uri: 'E855AF90-4A9B-4223-95E1-1FE700C4BDC0-deleted.ics',
+    lastmodified: '1660572955',
+    etag: '"79c725344d04a73b9bad1addee500bcf"',
+    calendarid: '30',
+    size: 748,
+    calendardata: 'BEGIN:VCALENDAR\r\n' +
+      'CALSCALE:GREGORIAN\r\n' +
+      'VERSION:2.0\r\n' +
+      'PRODID:-//IDN nextcloud.com//Calendar app 3.3.1//EN\r\n' +
+      'BEGIN:VEVENT\r\n' +
+      // [...] more data in iCal format
+      'END:VTIMEZONE\r\n' +
+      'END:VCALENDAR',
+    component: 'vevent',
+    classification: 0
+  },
+  eventType: "OCA\\DAV\\Events\\CalendarObjectRestoredEvent"
+}
+```
 
 ### Login Failed
 
