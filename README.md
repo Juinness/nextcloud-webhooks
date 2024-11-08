@@ -10,7 +10,7 @@ Features:
 
 ## Requirements
 
--   Nextcloud version 25-26
+-   Nextcloud version 25-30
 -   Ability to `exec(curl)` from a PHP script
 
 ## Usage

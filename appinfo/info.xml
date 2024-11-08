@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>webhooks</id>
-    <name>Webhooks</name>
+    <id>nexthooks</id>
+    <name>Nexthooks</name>
     <summary>Integrate your Nextcloud instance with external systems using Webhooks</summary>
     <description><![CDATA[This app allows a Nextcloud instance to call an external service via a HTTP(S) POST request whenever an event of a given type occurs.
     
 Outgoing webhooks can be triggered by either Nextcloud's internal events specified in config.php or by Flow actions defined in the admin UI.
 ]]></description>
-    <version>0.4.3</version>
+    <version>0.5.0</version>
     <licence>agpl</licence>
-    <author mail="pawel@kuffel.io" >Paweł Kuffel</author>
+    <author mail="sternfeld@gonicus.de" >Sebastian Sternfeld</author>
     <documentation>
-        <admin>https://github.com/kffl/nextcloud-webhooks#readme</admin>
+        <admin>https://github.com/Juinness/nexthooks#readme</admin>
     </documentation>
-    <namespace>Webhooks</namespace>
+    <namespace>Nexthooks</namespace>
     <category>integration</category>
     <category>tools</category>
     <category>workflow</category>
-    <bugs>https://github.com/kffl/nextcloud-webhooks/issues</bugs>
-    <repository>https://github.com/kffl/nextcloud-webhooks</repository>
-	<screenshot>https://raw.githubusercontent.com/kffl/nextcloud-webhooks/master/screenshots/admin.png</screenshot>
+    <bugs>https://github.com/Juinness/nexthooks/issues</bugs>
+    <repository>https://github.com/Juinness/nexthooks</repository>
+	<screenshot>https://raw.githubusercontent.com/Juinness/nexthooks/master/screenshots/admin.png</screenshot>
     <dependencies>
         <nextcloud min-version="25" max-version="30"/>
     </dependencies>
