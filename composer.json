@@ -1,11 +1,11 @@
 {
-    "name": "kffl/webhooks",
+    "name": "itnrw/nexthooks",
     "description": "Integrate your Nextcloud instance with external services using HTTP(S) Webhooks",
     "type": "project",
     "license": "AGPL",
     "authors": [
         {
-            "name": "Paweł Kuffel"
+            "name": "Sebastian Sternfeld"
         }
     ],
     "require": {},
