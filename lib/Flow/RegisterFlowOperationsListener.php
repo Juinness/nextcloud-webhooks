@@ -21,9 +21,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Flow;
+namespace OCA\Nexthooks\Flow;
 
-use OCA\Webhooks\Flow\Operation;
+use OCA\Nexthooks\Flow\Operation;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\IServerContainer;
@@ -48,6 +48,6 @@ class RegisterFlowOperationsListener implements IEventListener {
 		}
 		$operation = $this->container->get(Operation::class);
 		$event->registerOperation($operation);
-		Util::addScript('webhooks', 'webhooks-main');
+		Util::addScript('nexthooks', 'nexthooks-main');
 	}
 }

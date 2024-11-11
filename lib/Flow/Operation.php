@@ -21,10 +21,10 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Flow;
+namespace OCA\Nexthooks\Flow;
 
-use OCA\Webhooks\Utils\DtoExtractor;
-use OCA\Webhooks\Utils\SignedRequest;
+use OCA\Nexthooks\Utils\DtoExtractor;
+use OCA\Nexthooks\Utils\SignedRequest;
 use OCA\WorkflowEngine\Entity\File;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\GenericEvent;
@@ -76,7 +76,7 @@ class Operation implements IOperation {
 	 * @inheritDoc
 	 */
 	public function getIcon(): string {
-		return $this->urlGenerator->imagePath('webhooks', 'app.svg');
+		return $this->urlGenerator->imagePath('nexthooks', 'app.svg');
 	}
 
 	/**
@@ -127,7 +127,7 @@ class Operation implements IOperation {
 				$url = trim($flowOptions['url'] ?? '');
 
 				if ($url !== '' && filter_var($url, FILTER_VALIDATE_URL)) {
-					SignedRequest::sendSignedRequest($eventDto,	$this->config->getSystemValue("webhooks_secret"), $url);
+					SignedRequest::sendSignedRequest($eventDto,	$this->config->getSystemValue("nexthooks_secret"), $url);
 				}
 
 			} catch (UnexpectedValueException $e) {

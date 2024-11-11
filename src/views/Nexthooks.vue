@@ -11,7 +11,7 @@
 
 <script>
 export default {
-	name: 'Webhooks',
+	name: 'Nexthooks',
 	components: {},
 	props: {
 		value: {

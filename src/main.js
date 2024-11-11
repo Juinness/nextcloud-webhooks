@@ -20,11 +20,11 @@
  *
  */
 
-import Webhooks from './views/Webhooks'
+import Nexthooks from './views/Nexthooks'
 
 window.OCA.WorkflowEngine.registerOperator({
-	id: 'OCA\\Webhooks\\Flow\\Operation',
+	id: 'OCA\\Nexthooks\\Flow\\Operation',
 	color: '#0082c9',
 	operation: '',
-	options: Webhooks,
+	options: Nexthooks,
 })

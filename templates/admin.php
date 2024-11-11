@@ -1,12 +1,12 @@
 <?php
-style('webhooks', 'style');
+style('nexthooks', 'style');
 ?>
 
-<div id="webhooks" class="section">
-	<h2 class="inlineblock">Webhooks</h2>
-	<a target="_blank" rel="noreferrer" class="icon-info" title="Open documentation" href="https://github.com/kffl/nextcloud-webhooks"></a>
+<div id="nexthooks" class="section">
+	<h2 class="inlineblock">Nexthooks</h2>
+	<a target="_blank" rel="noreferrer" class="icon-info" title="Open documentation" href="https://github.com/kffl/nextcloud-nexthooks"></a>
 	<ul>
-		<li>The Webhooks app is <strong>enabled</strong> <span class="status success"></span></li>
+		<li>The Nexthooks app is <strong>enabled</strong> <span class="status success"></span></li>
 		<?php if (!empty($_['secret'])) : ?>
 			<li>The secret used for signing POST requests is <strong>defined</strong> <span class="status success"></span></li>
 		<?php else : ?>
@@ -31,6 +31,6 @@ style('webhooks', 'style');
 			<li><?php p($eventName); ?>: <code><?php p($configName); ?></code></li>
 		<?php endforeach ?>
 	</ol>
-	<p id="webhooks-hint" class="settings-hint">You can enable the inactive events by providing their webhook URLs in config.php</p>
+	<p id="nexthooks-hint" class="settings-hint">You can enable the inactive events by providing their webhook URLs in config.php</p>
 	<?php endif; ?>
 </div>

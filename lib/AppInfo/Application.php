@@ -23,29 +23,29 @@ declare(strict_types=1);
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\AppInfo;
+namespace OCA\Nexthooks\AppInfo;
 
-use OCA\Webhooks\Listeners\CalendarObjectCreatedListener;
-use OCA\Webhooks\Listeners\CalendarObjectUpdatedListener;
-use OCA\Webhooks\Listeners\CalendarObjectDeletedListener;
-use OCA\Webhooks\Listeners\CalendarObjectMovedToTrashListener;
-use OCA\Webhooks\Listeners\CalendarObjectRestoredFromTrashListener;
-use OCA\Webhooks\Listeners\UserLiveStatusListener;
-use OCA\Webhooks\Listeners\LoginFailedListener;
-use OCA\Webhooks\Listeners\PasswordUpdatedListener;
-use OCA\Webhooks\Listeners\ShareCreatedListener;
-use OCA\Webhooks\Listeners\UserChangedListener;
-use OCA\Webhooks\Listeners\UserCreatedListener;
-use OCA\Webhooks\Listeners\UserDeletedListener;
-use OCA\Webhooks\Listeners\UserLoggedInListener;
-use OCA\Webhooks\Listeners\UserLoggedOutListener;
+use OCA\Nexthooks\Listeners\CalendarObjectCreatedListener;
+use OCA\Nexthooks\Listeners\CalendarObjectUpdatedListener;
+use OCA\Nexthooks\Listeners\CalendarObjectDeletedListener;
+use OCA\Nexthooks\Listeners\CalendarObjectMovedToTrashListener;
+use OCA\Nexthooks\Listeners\CalendarObjectRestoredFromTrashListener;
+use OCA\Nexthooks\Listeners\UserLiveStatusListener;
+use OCA\Nexthooks\Listeners\LoginFailedListener;
+use OCA\Nexthooks\Listeners\PasswordUpdatedListener;
+use OCA\Nexthooks\Listeners\ShareCreatedListener;
+use OCA\Nexthooks\Listeners\UserChangedListener;
+use OCA\Nexthooks\Listeners\UserCreatedListener;
+use OCA\Nexthooks\Listeners\UserDeletedListener;
+use OCA\Nexthooks\Listeners\UserLoggedInListener;
+use OCA\Nexthooks\Listeners\UserLoggedOutListener;
 
 use OCA\DAV\Events\CalendarObjectCreatedEvent;
 use OCA\DAV\Events\CalendarObjectDeletedEvent;
 use OCA\DAV\Events\CalendarObjectMovedToTrashEvent;
 use OCA\DAV\Events\CalendarObjectRestoredEvent;
 use OCA\DAV\Events\CalendarObjectUpdatedEvent;
-use OCA\Webhooks\Flow\RegisterFlowOperationsListener;
+use OCA\Nexthooks\Flow\RegisterFlowOperationsListener;
 use OCP\Authentication\Events\LoginFailedEvent; 
 use OCP\Share\Events\ShareCreatedEvent;
 use OCP\User\Events\UserChangedEvent;
@@ -65,12 +65,12 @@ use OCP\WorkflowEngine\Events\RegisterOperationsEvent;
 /**
  * Class Application
  *
- * @package OCA\Webhooks\AppInfo
+ * @package OCA\Nexthooks\AppInfo
  */
 class Application extends App implements IBootstrap {
 
 	public function __construct() {
-		parent::__construct('webhooks');
+		parent::__construct('nexthooks');
 	}
 
 	public function register(IRegistrationContext $context):void {		

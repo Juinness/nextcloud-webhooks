@@ -17,14 +17,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/kffl/nextcloud-webhooks.git"
+        "url": "git+https://github.com/Juinness/nexthooks.git"
     },
     "author": "",
     "license": "AGPL-3.0-or-later",
     "bugs": {
-        "url": "https://github.com/kffl/nextcloud-webhooks/issues"
+        "url": "https://github.com/Juinness/nexthooks/issues"
     },
-    "homepage": "https://github.com/kffl/nextcloud-webhooks#readme",
+    "homepage": "https://github.com/Juinness/nexthooks#readme",
     "dependencies": {
         "vue": "^2.6.11"
     },

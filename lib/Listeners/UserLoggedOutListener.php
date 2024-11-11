@@ -21,9 +21,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Listeners;
+namespace OCA\Nexthooks\Listeners;
 
-use OCA\Webhooks\Utils\DtoExtractor;
+use OCA\Nexthooks\Utils\DtoExtractor;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\User\Events\UserLoggedOutEvent;
@@ -31,11 +31,11 @@ use OCP\User\Events\UserLoggedOutEvent;
 /**
  * Class UserLoggedOutListener
  *
- * @package OCA\Webhooks\Listeners
+ * @package OCA\Nexthooks\Listeners
  */
 class UserLoggedOutListener extends AbstractListener implements IEventListener {
 
-	public const CONFIG_NAME = "webhooks_user_logged_out_url";
+	public const CONFIG_NAME = "nexthooks_user_logged_out_url";
 
 	public function handleIncomingEvent(Event $event) {
 		if (!($event instanceOf UserLoggedOutEvent)) {

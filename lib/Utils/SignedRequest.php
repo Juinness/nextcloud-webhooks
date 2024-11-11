@@ -23,7 +23,7 @@ declare(strict_types=1);
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Utils;
+namespace OCA\Nexthooks\Utils;
 
 class SignedRequest {
 
@@ -33,7 +33,7 @@ class SignedRequest {
 		$eventJSONescaped = escapeshellarg($eventJSON);
 		$endpointEscaped = escapeshellarg($endpoint);
 
-		$curl  = "curl $endpointEscaped --header \"X-Nextcloud-Webhooks: $bodyHash\" ";
+		$curl  = "curl $endpointEscaped --header \"X-Nextcloud-Nexthooks: $bodyHash\" ";
 		$curl .= "--header \"Content-Type: application/json\" --request POST ";
 		$curl .= "--data $eventJSONescaped  > /dev/null 2>&1 &";
 
