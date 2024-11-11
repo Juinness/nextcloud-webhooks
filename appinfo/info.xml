@@ -3,12 +3,12 @@
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
     <id>nexthooks</id>
     <name>Nexthooks</name>
-    <summary>Integrate your Nextcloud instance with external systems using Webhooks</summary>
+    <summary>Integrate your Nextcloud instance with external systems using Nexthooks</summary>
     <description><![CDATA[This app allows a Nextcloud instance to call an external service via a HTTP(S) POST request whenever an event of a given type occurs.
     
-Outgoing webhooks can be triggered by either Nextcloud's internal events specified in config.php or by Flow actions defined in the admin UI.
+Outgoing nexthooks can be triggered by either Nextcloud's internal events specified in config.php or by Flow actions defined in the admin UI.
 ]]></description>
-    <version>0.5.0</version>
+    <version>0.5.1</version>
     <licence>agpl</licence>
     <author mail="sternfeld@gonicus.de" >Sebastian Sternfeld</author>
     <documentation>
@@ -26,6 +26,6 @@ Outgoing webhooks can be triggered by either Nextcloud's internal events specifi
     </dependencies>
 
     <settings>
-        <admin>OCA\Webhooks\Settings\Admin</admin>
+        <admin>OCA\Nexthooks\Settings\Admin</admin>
     </settings>
 </info>

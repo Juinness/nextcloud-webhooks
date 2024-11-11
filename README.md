@@ -1,4 +1,4 @@
-# ![Webhooks Logo](screenshots/webhooks-logo.svg) Webhooks for Nextcloud 
+# ![Nexthooks Logo](screenshots/nexthooks-logo.svg) Nexthooks for Nextcloud 
 
 This app allows a Nextcloud instance to notify external systems via HTTP POST requests whenever an event of a given type occurs.
 
@@ -15,25 +15,25 @@ Features:
 
 ## Usage
 
-This app is published in the [Nextcloud App Store](https://apps.nextcloud.com/apps/webhooks). Alternatively, it can be installed manually by grabbing the release `.tar.gz` archive, unpacking it in the `apps` folder of your Nextcloud instance and activating the app in the Admin UI.
+Install manually by grabbing the release `.tar.gz` archive, unpacking it in the `apps` folder of your Nextcloud instance and activating the app in the Admin UI.
 
-When active, the App status is reported in Settings > Administration > Security > (scroll down to) Webhooks.
+When active, the App status is reported in Settings > Administration > Security > (scroll down to) Nexthooks.
 
-![Nextcloud Webhooks admin screen](screenshots/admin.png)
+![Nextcloud Nexthooks admin screen](screenshots/admin.png)
 
-### Event-based outgoing Webhooks
+### Event-based outgoing Nexthooks
 
-In order to enable webhooks for a given event type, you have to provide the target URL with the config key corresponding the a given event in your [config file](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html). Example (User Logged In Event):
+In order to enable nexthooks for a given event type, you have to provide the target URL with the config key corresponding the a given event in your [config file](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html). Example (User Logged In Event):
 
 ```PHP
-  'webhooks_user_logged_in_url' => 'https://your-service.tld/hooks/user-logged-in',
+  'nexthooks_user_logged_in_url' => 'https://your-service.tld/hooks/user-logged-in',
 ```
 
-### Flow-based outgoing Webhooks
+### Flow-based outgoing Nexthooks
 
 Aside from listening for specific events, this app also supports sending HTTP POST notifications triggered by a Flow defined by the admin with a specified endpoint URL.
 
-![Nextcloud Webhooks Flow integration](screenshots/flow.png)
+![Nextcloud Nexthooks Flow integration](screenshots/flow.png)
 
 With the example Flow listed above being active, when a new a new PDF file is uploaded, name of which matches __report__, a POST request is sent to the specified URL with the following payload:
 
@@ -73,13 +73,13 @@ Example notification payloads for other Flow event types are listed [here](#flow
 
 ## Authenticating requests
 
-If the Nextcloud instance and the service responsible for receiving incoming webhook notifications are to communicate over public internet, it is important to provide a secret key used for signing the notifications in order to protect the receiving service from spoofing attacks. This app allows you to define `webhooks_secret` in your Nextcloud `config.php` like so:
+If the Nextcloud instance and the service responsible for receiving incoming webhook notifications are to communicate over public internet, it is important to provide a secret key used for signing the notifications in order to protect the receiving service from spoofing attacks. This app allows you to define `nexthooks_secret` in your Nextcloud `config.php` like so:
 
 ```PHP
-  'webhooks_secret' => 'yoursecret1234',
+  'nexthooks_secret' => 'yoursecret1234',
 ```
 
-Once the secret is defined, all outgoing webhook notifications will contain a signature in the `X-Nextcloud-Webhooks` HTTP header. The signature is calculated by performing a SHA256 function on the POST request raw body concatenated with the secret defined earlier.
+Once the secret is defined, all outgoing webhook notifications will contain a signature in the `X-Nextcloud-Nexthooks` HTTP header. The signature is calculated by performing a SHA256 function on the POST request raw body concatenated with the secret defined earlier.
 
 Below is a minimal example of a Node.js Express app (with `body-parser`) validating incoming webhook notification signature:
 
@@ -99,7 +99,7 @@ app.post('/login-failed', (req, res) => {
   var hash = crypto.createHash('sha256');
   hash.update(req.rawBody + "yoursecret1234");
   var expected = hash.digest('hex');
-  var obtained = req.get('X-Nextcloud-Webhooks');
+  var obtained = req.get('X-Nextcloud-Nexthooks');
 
   console.log("expected: ", expected);
   console.log("obtained: ", obtained);
@@ -124,7 +124,7 @@ app.listen(3000, () => { console.log("Server started.") })
 
 Fires whenever a calendar event is created.
 
-Config name: `webhooks_calendar_object_created_url`
+Config name: `nexthooks_calendar_object_created_url`
 
 Notification payload:
 ```javascript
@@ -167,7 +167,7 @@ Notification payload:
 
 Fires whenever a calendar event is edited (including meeting participant accepting/declining invitations).
 
-Config name: `webhooks_calendar_object_updated_url`
+Config name: `nexthooks_calendar_object_updated_url`
 
 Notification payload:
 ```javascript
@@ -210,7 +210,7 @@ Notification payload:
 
 Fires whenever a calendar event is soft-deleted (moved to trash).
 
-Config name: `webhooks_calendar_object_moved_to_trash_url`
+Config name: `nexthooks_calendar_object_moved_to_trash_url`
 
 Notification payload:
 ```javascript
@@ -253,7 +253,7 @@ Notification payload:
 
 Fires whenever a calendar event is permanently deleted (i.e. deleted from the trashbin).
 
-Config name: `webhooks_calendar_object_deleted`
+Config name: `nexthooks_calendar_object_deleted`
 
 Notification payload:
 ```javascript
@@ -295,7 +295,7 @@ Notification payload:
 
 Fires whenever a calendar event is restored from Trashbin. 
 
-Config name: `webhooks_calendar_object_restore_from_trash_url`
+Config name: `nexthooks_calendar_object_restore_from_trash_url`
 
 Notification payload:
 ```javascript
@@ -338,7 +338,7 @@ Notification payload:
 
 Fires whenever a login attempt with an existing username fails.
 
-Config name: `webhooks_login_failed_url`
+Config name: `nexthooks_login_failed_url`
 
 Notification payload:
 ```javascript
@@ -352,7 +352,7 @@ Notification payload:
 
 Fires whenever user's password is changed.
 
-Config name: `webhooks_password_updated_url`
+Config name: `nexthooks_password_updated_url`
 
 Notification payload:
 ```javascript
@@ -374,7 +374,7 @@ Notification payload:
 
 Fires whenever a new share is created.
 
-Config name: `webhooks_share_created_url`
+Config name: `nexthooks_share_created_url`
 
 Notification payload:
 ```javascript
@@ -411,7 +411,7 @@ Notification payload:
 
 Fires whenever a user account is edited. Includes values before and after edit.
 
-Config name: `webhooks_user_changed_url`
+Config name: `nexthooks_user_changed_url`
 
 Notification payload:
 ```javascript
@@ -437,7 +437,7 @@ Notification payload:
 
 Fires whenever a new user is created.
 
-Config name: `webhooks_user_created_url`
+Config name: `nexthooks_user_created_url`
 
 Notification payload:
 ```javascript
@@ -461,7 +461,7 @@ Notification payload:
 
 Fires whenever a user account is deleted.
 
-Config name: `webhooks_user_deleted_url`
+Config name: `nexthooks_user_deleted_url`
 
 Notification payload:
 ```javascript
@@ -483,7 +483,7 @@ Notification payload:
 
 Fires whenever user's live status is updated to __online__ (happens when user navigates between apps and doesn't necessarily indicate that the status changed).
 
-Config name: `webhooks_user_status_url`
+Config name: `nexthooks_user_status_url`
 
 ```javascript
 {
@@ -506,7 +506,7 @@ Config name: `webhooks_user_status_url`
 
 Fires whenever a user logs in successfully.
 
-Config name: `webhooks_user_logged_in_url`
+Config name: `nexthooks_user_logged_in_url`
 
 Notification payload:
 ```javascript
@@ -530,7 +530,7 @@ Notification payload:
 
 Fires whenever a user logs out successfully.
 
-Config name: `webhooks_user_logged_out_url`
+Config name: `nexthooks_user_logged_out_url`
 
 Notification payload:
 ```javascript

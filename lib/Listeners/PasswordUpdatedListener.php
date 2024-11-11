@@ -21,9 +21,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Listeners;
+namespace OCA\Nexthooks\Listeners;
 
-use OCA\Webhooks\Utils\DtoExtractor;
+use OCA\Nexthooks\Utils\DtoExtractor;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\User\Events\PasswordUpdatedEvent;
@@ -31,11 +31,11 @@ use OCP\User\Events\PasswordUpdatedEvent;
 /**
  * Class PasswordUpdatedListener
  *
- * @package OCA\Webhooks\Listeners
+ * @package OCA\Nexthooks\Listeners
  */
 class PasswordUpdatedListener extends AbstractListener implements IEventListener {
 
-	public const CONFIG_NAME = "webhooks_password_updated_url";
+	public const CONFIG_NAME = "nexthooks_password_updated_url";
 
 	public function handleIncomingEvent(Event $event) {
 		if (!($event instanceOf PasswordUpdatedEvent)) {

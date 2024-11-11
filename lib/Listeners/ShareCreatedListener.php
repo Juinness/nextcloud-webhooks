@@ -21,7 +21,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Listeners;
+namespace OCA\Nexthooks\Listeners;
 
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
@@ -30,11 +30,11 @@ use OCP\Share\Events\ShareCreatedEvent;
 /**
  * Class ShareCreatedListener
  *
- * @package OCA\Webhooks\Listeners
+ * @package OCA\Nexthooks\Listeners
  */
 class ShareCreatedListener extends AbstractListener implements IEventListener {
 
-	public const CONFIG_NAME = "webhooks_share_created_url";
+	public const CONFIG_NAME = "nexthooks_share_created_url";
 
 	public function handleIncomingEvent(Event $event) {
 		if (!($event instanceOf ShareCreatedEvent)) {

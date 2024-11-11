@@ -23,13 +23,13 @@ declare(strict_types=1);
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Settings;
+namespace OCA\Nexthooks\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IConfig;
 use OCP\IInitialStateService;
 use OCP\Settings\ISettings;
-use OCA\Webhooks\AppInfo\Application;
+use OCA\Nexthooks\AppInfo\Application;
 
 class Admin implements ISettings {
 
@@ -55,10 +55,10 @@ class Admin implements ISettings {
 		}
 
 		return new TemplateResponse(
-			'webhooks',
+			'nexthooks',
 			'admin',
 			[
-				'secret' => $this->config->getSystemValue('webhooks_secret'),
+				'secret' => $this->config->getSystemValue('nexthooks_secret'),
 				'canCurl' => Admin::testCurl(),
 				'activeEvents' => $activeEvents,
 				'inactiveEvents' => $inactiveEvents,

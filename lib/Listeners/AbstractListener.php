@@ -21,9 +21,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Listeners;
+namespace OCA\Nexthooks\Listeners;
 
-use OCA\Webhooks\Utils\SignedRequest;
+use OCA\Nexthooks\Utils\SignedRequest;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use \OCP\IConfig;
@@ -31,7 +31,7 @@ use \OCP\IConfig;
 /**
  * Class AbstractListener
  *
- * @package OCA\Webhooks\Listeners
+ * @package OCA\Nexthooks\Listeners
  */
 abstract class AbstractListener implements IEventListener {
 
@@ -46,7 +46,7 @@ abstract class AbstractListener implements IEventListener {
 	{
 		$this->config = $config;
 		$this->endpoint = $this->config->getSystemValue(static::CONFIG_NAME);
-		$this->secret = $this->config->getSystemValue("webhooks_secret");
+		$this->secret = $this->config->getSystemValue("nexthooks_secret");
 	}
 
 	public function handle(Event $event): void {

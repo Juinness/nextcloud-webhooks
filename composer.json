@@ -1,6 +1,6 @@
 {
     "name": "itnrw/nexthooks",
-    "description": "Integrate your Nextcloud instance with external services using HTTP(S) Webhooks",
+    "description": "Integrate your Nextcloud instance with external services using HTTP(S) Nexthooks",
     "type": "project",
     "license": "AGPL",
     "authors": [

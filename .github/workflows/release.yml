@@ -5,7 +5,7 @@ on:
       types: [published]
 
 env:
-  APP_NAME: webhooks
+  APP_NAME: nexthooks
 
 jobs:
   build_and_publish:

@@ -21,7 +21,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
-namespace OCA\Webhooks\Listeners;
+namespace OCA\Nexthooks\Listeners;
 
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
@@ -30,11 +30,11 @@ use OCA\DAV\Events\CalendarObjectUpdatedEvent;
 /**
  * Class CalendarObjectUpdatedListener
  *
- * @package OCA\Webhooks\Listeners
+ * @package OCA\Nexthooks\Listeners
  */
 class CalendarObjectUpdatedListener extends AbstractListener implements IEventListener {
 
-	public const CONFIG_NAME = "webhooks_calendar_object_updated_url";
+	public const CONFIG_NAME = "nexthooks_calendar_object_updated_url";
 
 	public function handleIncomingEvent(Event $event) {
 		if (!($event instanceOf CalendarObjectUpdatedEvent)) {
